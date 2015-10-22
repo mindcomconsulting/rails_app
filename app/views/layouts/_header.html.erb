@@ -1,0 +1,28 @@
+<div id="head">
+
+  <p class="navbar-text pull-right">
+	<% if user_signed_in? %>
+	   Logged in as <strong><%= current_user.email %></strong>.
+	  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+	  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+	  <%= link_to "Add_Home_page_Detail", new_article_path, :class => 'right-alin'  %>
+	  
+	<% else %>
+	  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+	  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+	  <%= link_to 'Home', style = "", :class => 'home_link' %>
+	  <%= link_to 'About', :class => 'home_link' %>
+	  <%= link_to 'Portfolio', :class => 'home_link' %>
+	  <%= link_to 'Blog', :class => 'home_link' %>
+	  
+	<% end %>
+  </p>
+</div>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+

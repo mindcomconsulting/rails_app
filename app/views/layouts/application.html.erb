@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Photogrophy</title>      
+      <link rel="stylesheet" type="text/css" href="style.css">
+
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+    </head>
+   <body>
+      <div class="wrapper">   
+           
+        <%= render :partial => "layouts/header"%>
+        <div id="content">
+          <%= yield %>
+        </div>
+        <div id="footer">
+          <%= render :partial => "layouts/footer" %>     
+        </div>
+      </div>
+    </body>
+    
+</html>
+
+

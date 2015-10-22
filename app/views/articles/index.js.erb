@@ -1,0 +1,8 @@
+<%puts"=========inside.js.erb==============="%>
+<%puts @article.inspect%>
+<%puts"=========inside.js.erb==============="%>
+
+
+$("#productsid").html("<%= escape_javascript(render("products")) %>");
+$('.pagination a').attr('data-remote', 'true');
+

@@ -1,0 +1,8 @@
+<h1>hiiii</h1>
+<%= form_for :email, :url=>{:controller=>'articles', :action=>'create_email'} do |f| %>
+<%= f.label :Enter_Email %>
+<%= f.text_field :email %>
+
+
+<%= f.submit %>
+<% end %>

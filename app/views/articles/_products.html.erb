@@ -1,0 +1,22 @@
+<%puts"=========partial==============="%>
+<%puts @article.inspect%>
+<%puts"=========partial==============="%>
+<table border="1">  
+  <tr>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Article Name</th>
+    <th>Link</th>
+  </tr>
+  <tbody>
+  <% @article.each do |article| %>
+    <tr>
+       <td><%= image_tag(article.attachment) %></td>
+       <td><%= article.title %></td>
+       <td><%= article.fname %></td>
+       <td><%= link_to 'pdf', {:controller=>'articles',:action=>'generate_pdf',:id=>article.id,:format=>'pdf',:target=>'_blank'}%></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= will_paginate @article %>
